@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EtoilesComponent } from '../etoiles/etoiles.component';
 import { FORFAITS } from '../mock-forfait';
 import { IForfaits } from '../mock-forfait';
 

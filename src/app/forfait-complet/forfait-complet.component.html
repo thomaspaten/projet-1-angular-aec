@@ -1,1 +1,85 @@
-<h1>forfait-complet works!</h1>
+<div *ngFor="let forfait of forfaits">
+  <mat-card class="theme_forfait_complet margin_1">
+    <div class="d_flex align_items_center">
+      <!-- Carte Header -->
+      <div class="col_10">
+        <mat-card-header>
+          <mat-card-subtitle
+            >{{ forfait.destination }} de {{ forfait.villeDepart }}
+          </mat-card-subtitle>
+          <mat-card-title>
+            {{ forfait.hotel.nom }}
+          </mat-card-title>
+
+          <!-- Affichage nombre d'étoiles -->
+          <mat-card-title [ngSwitch]="forfait.hotel.nombreEtoiles">
+            <!-- 5* -->
+            <div *ngSwitchCase="5">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 4* -->
+            <div *ngSwitchCase="4">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 3* -->
+            <div *ngSwitchCase="3">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 2* -->
+            <div *ngSwitchCase="2">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 1* -->
+            <div *ngSwitchCase="1">
+              <app-etoiles></app-etoiles>
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{ forfait.hotel.coordonnees }}
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <!-- Caractéristiques de l'hotel -->
+
+        <mat-card-content>
+          <ul *ngFor="let caracteristique of forfait.hotel.caracteristiques">
+            <li>{{ caracteristique }}</li>
+          </ul>
+        </mat-card-content>
+      </div>
+
+      <!-- Rabais Hachuré -->
+      <div class="col_2">
+        <mat-card-title [ngClass]="{ text_rabais: forfait.rabais > 0 }"
+          >{{ forfait.prix }} $</mat-card-title
+        >
+        <mat-card-title *ngIf="forfait.rabais > 0"
+          >{{ forfait.prix - forfait.rabais }} $</mat-card-title
+        >
+        <mat-card-content>Taxes et frais inclus</mat-card-content>
+
+        <!-- Départ et arrivée -->
+
+        <mat-card-content
+          >Date de départ :
+          {{ forfait.dateDepart.toLocaleDateString("en-US") }}</mat-card-content
+        >
+        <mat-card-content
+          >Date de retour :
+          {{ forfait.dateRetour.toLocaleDateString("en-US") }}</mat-card-content
+        >
+        <mat-card-content> {{ forfait.duree }} JOURS</mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+</div>

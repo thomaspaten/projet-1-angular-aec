@@ -41,8 +41,8 @@ export const FORFAITS: IForfaits[] = [
     dateRetour: new Date('2021-02-15'),
     duree: dureeVoyage('2021-01-01', '2021-01-15'),
     prix: 500,
-    rabais: 100,
-    vedette: true,
+    rabais: 0,
+    vedette: false,
   },
   {
     destination: 'Guantanamo',
@@ -50,12 +50,12 @@ export const FORFAITS: IForfaits[] = [
     hotel: {
       nom: 'Camp de Guantanamo',
       coordonnees: 'TOP SECRET',
-      nombreEtoiles: 0,
+      nombreEtoiles: 2,
       nombreChambres: 100,
       caracteristiques: [
-        'Pour les amateurs de Paddle Board, le Waterboarding',
-        'Ne manquer aucune minute de votre voyage avec notre programme de privation de sommeil forcée',
-        'Relaxation total, grâce à la Privation sensorielle permanente',
+        'Pour les amateurs de Paddle Board, le Waterboarding.',
+        'Ne manquer aucune minute de votre voyage avec notre programme de privation de sommeil forcée.',
+        'Relaxer totalement, en étant dans un état de privation sensorielle permanent.',
       ],
     },
     dateDepart: new Date('2021-01-01'),
@@ -75,8 +75,8 @@ export const FORFAITS: IForfaits[] = [
       nombreChambres: 100,
       caracteristiques: [
         'Ski dans la poudreuse',
-        'Chasse de gibiers aux M16',
-        'Maison Luxueuse',
+        'Chasse de gibiers au M16',
+        'Maison luxueuse',
       ],
     },
     dateDepart: new Date('2021-01-01'),
@@ -90,12 +90,12 @@ export const FORFAITS: IForfaits[] = [
     destination: 'Bogota',
     villeDepart: 'Toronto',
     hotel: {
-      nom: 'La Modelo',
+      nom: 'Celda de La Modelo',
       coordonnees: '000-456-7890',
       nombreEtoiles: 1,
       nombreChambres: 100,
       caracteristiques: [
-        'Dégustation alcool artisanaux',
+        'Dégustation d\'alcool artisanaux',
         'Combats extrêmes',
         'Voisins de chambre particulièrement affectueux',
       ],
@@ -111,9 +111,9 @@ export const FORFAITS: IForfaits[] = [
     destination: 'Bolivie',
     villeDepart: 'Dorval',
     hotel: {
-      nom: 'San Pedro',
+      nom: 'Celda de San Pedro',
       coordonnees: '289-999-7890',
-      nombreEtoiles: 2,
+      nombreEtoiles: 3,
       nombreChambres: 100,
       caracteristiques: [
         'Immersion culturel',
@@ -137,7 +137,7 @@ export const FORFAITS: IForfaits[] = [
       nombreEtoiles: 5,
       nombreChambres: 100,
       caracteristiques: [
-        'Voyage orientation',
+        'Voyage d\'orientation',
         'Salaires compétitifs',
         'Environnement stimulant',
         'Possibilités emplois et séjours permanents',
