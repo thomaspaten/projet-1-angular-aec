@@ -1,0 +1,68 @@
+<h1 class="bg">mini-forfait works!</h1>
+<app-etoiles></app-etoiles>
+
+<div class="d_flex" *ngFor="let forfait of forfaits">
+  <div class="d_flex">
+    <!-- Carte mini-forfait -->
+    <div class="d_flex">
+      <mat-card>
+        <!-- Carte Header -->
+
+        <mat-card-header class="inline_block">
+          <mat-card-subtitle
+            >{{ forfait.destination }} de {{ forfait.villeDepart }} TESTE
+          </mat-card-subtitle>
+          <mat-card-title>
+            {{ forfait.hotel.nom }}
+          </mat-card-title>
+
+          <!-- Affichage nombre d'étoiles -->
+          <mat-card-title [ngSwitch]="forfait.hotel.nombreEtoiles">
+            <!-- 5* -->
+            <div *ngSwitchCase="5">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 4* -->
+            <div *ngSwitchCase="4">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 3* -->
+            <div *ngSwitchCase="3">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 2* -->
+            <div *ngSwitchCase="2">
+              <app-etoiles></app-etoiles>
+              <app-etoiles></app-etoiles>
+            </div>
+            <!-- 1* -->
+            <div *ngSwitchCase="1">
+              <app-etoiles></app-etoiles>
+            </div>
+          </mat-card-title>
+        </mat-card-header>
+        <div class="inline_block">
+          <mat-card-title>{{ forfait.prix }} $</mat-card-title>
+          <mat-card-content>Taxes et frais inclus</mat-card-content>
+          <!--  -->
+          <mat-card-content
+            >{{ forfait.dateDepart.toLocaleDateString("en-US") }},
+            {{ forfait.duree }} JOURS
+          </mat-card-content>
+        </div>
+        <div class="inline_block">
+          <mat-icon class="arrow_icon">keyboard_arrow_right</mat-icon>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
