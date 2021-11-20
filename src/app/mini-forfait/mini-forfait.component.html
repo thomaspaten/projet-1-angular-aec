@@ -1,6 +1,9 @@
-<div class="d_flex justify_content_center">
-  <div class="col_4" *ngFor="let forfait of forfaits">
+<div class="d_flex">
+  <!-- <div class="col_4" *ngFor="let forfait of forfaits"> -->
+    <ng-container *ngFor="let forfait of forfaits">
+
     <ng-template [ngIf]="forfait.vedette">
+      <div class="col_4">
       <mat-card>
         <div class="d_flex align_items_center">
           <!-- Carte Header -->
@@ -64,6 +67,9 @@
           </div>
         </div>
       </mat-card>
+    </div>
     </ng-template>
-  </div>
+  <!-- </div> -->
+        
+</ng-container>
 </div>
